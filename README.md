@@ -1,16 +1,41 @@
-# test_app
+# Flutter Test App
 
-A new Flutter project.
+Приложение является шаблоном для клиентской части кроссплатфрменного приложения
 
-## Getting Started
+# Структура проекта
 
-This project is a starting point for a Flutter application.
+assets/json/
 
-A few resources to get you started if this is your first Flutter project:
+lib/
+ 
+    app/ - основные файлы приложения, пути и стили
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    features/ - фишки проекта 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+        menu/ - реализация бокового и нижнего меню
+
+        pages/ - страницы проекта, сейчас реализованы страницы из нижнего меню (там красивые но не функциональные зашлушки)
+
+main.dart - main файл
+
+## Особенности приложения
+
+- на десктопах и планшетах отображается боковое меню
+
+- на мобилках отображается нижнее меню
+
+- боковое меню динамически генерируется из json файла, который либо получается с сервера, либо из файлов проекта(если сервер недоступен)
+
+
+## Технологии
+
+- **Flutter**: Основной фреймворк для разработки приложения.
+- **GoRouter**: Навигация между страницами.
+- **Provider**: Управление состоянием приложения.
+
+## Установка и особенности запуска
+
+1. Клонируйте репозиторий
+
+2. Если проект запускается из IDE, приложение виснет при нажатии на кнопку меню, отожмите галочку на Uncaght Exceptions Breakpoints
+![alt text](image.png)
