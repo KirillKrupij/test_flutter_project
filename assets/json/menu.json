@@ -1,0 +1,68 @@
+{
+    "menuItems": [
+      {
+        "section": "РЕГИСТРАТУРА"
+      },
+      {
+        "icon": "event",
+        "text": "Календарь",
+        "page": "CalendarPage"
+      },
+      {
+        "icon": "person",
+        "text": "Пациенты",
+        "page": "PatientsPage"
+      },
+      {
+        "icon": "note",
+        "text": "Записи",
+        "page": "RecordsPage"
+      },
+      {
+        "icon": "event",
+        "text": "События",
+        "page": "EventsPage"
+      },
+      {
+        "section": "МЕДИЦИНА"
+      },
+      {
+        "icon": "medical_services",
+        "text": "Приёмы врача",
+        "page": "AppointmentsPage"
+      },
+      {
+        "icon": "visibility",
+        "text": "Медицинские осмотры",
+        "page": "CheckupsPage"
+      },
+      {
+        "icon": "analytics",
+        "text": "Анализы",
+        "page": "TestsPage"
+      },
+      {
+        "icon": "receipt",
+        "text": "Рецепты",
+        "page": "PrescriptionsPage"
+      },
+      {
+        "section": "ФИНАНСЫ"
+      },
+      {
+        "icon": "money",
+        "text": "Кассы",
+        "page": "CashRegistersPage"
+      },
+      {
+        "icon": "sell",
+        "text": "Продажи",
+        "page": "SalesPage"
+      },
+      {
+        "icon": "report",
+        "text": "Отчёты",
+        "page": "ReportsPage"
+      }
+    ]
+  }
