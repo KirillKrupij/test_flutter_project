@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../app/app_styles.dart'; 
-
 class SideMenuItem extends StatelessWidget {
   final IconData icon;
   final String text;
@@ -18,20 +16,26 @@ class SideMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      hoverColor: AppStyles.sideMenuItemHoverColor, // Цвет при наведении
+      hoverColor: Theme.of(context).hoverColor, // Цвет при наведении
       child: Padding(
-        padding: AppStyles.sideMenuItemPadding, // Отступы
+        padding: const EdgeInsets.symmetric(
+          vertical: 12.0,
+          horizontal: 16.0,
+        ), // Отступы
         child: Row(
           children: [
             Icon(
               icon,
-              size: AppStyles.sideMenuItemIconSize, // Размер иконки
-              color: AppStyles.sideMenuItemIconColor, // Цвет иконки
+              size: 24.0, // Размер иконки
+              color: Theme.of(context).iconTheme.color, // Цвет иконки
             ),
             const SizedBox(width: 16), // Отступ между иконкой и текстом
             Text(
               text,
-              style: Theme.of(context).textTheme.bodyLarge, // Используем стиль из темы
+              style:
+                  Theme.of(
+                    context,
+                  ).textTheme.bodyLarge, // Используем стиль из темы
             ),
           ],
         ),

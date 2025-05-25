@@ -14,10 +14,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   int _getSelectedIndexFromRoute(String location) {
     if (location == '/') return 0; // Главная страница — активна кнопка "Home"
-    if (location.startsWith('/calendar')) return 1;
-    if (location.startsWith('/patients')) return 2;
-    if (location.startsWith('/records')) return 3;
-    if (location.startsWith('/events')) return 4;
+    if (location.startsWith('/projects')) return 1;
+    if (location.startsWith('/employees')) return 2;
+    if (location.startsWith('/departments')) return 3;
+    if (location.startsWith('/perfomance')) return 4;
     return 0; // По умолчанию активна кнопка "Home"
   }
 
@@ -42,28 +42,31 @@ class _BottomNavBarState extends State<BottomNavBar> {
       backgroundColor: Colors.white,
       selectedItemColor: Theme.of(context).primaryColor,
       selectedLabelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-          ),
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+      ),
       selectedIconTheme: IconThemeData(
         size: 24,
         color: Theme.of(context).primaryColor,
       ),
       unselectedItemColor: Colors.black54,
       unselectedLabelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-          ),
-      unselectedIconTheme: IconThemeData(
-        size: 22,
-        color: Colors.black54,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
       ),
+      unselectedIconTheme: IconThemeData(size: 22, color: Colors.black54),
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Главная'), // Кнопка "Home"
-        BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Календарь'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Пациенты'),
-        BottomNavigationBarItem(icon: Icon(Icons.note), label: 'Записи'),
-        BottomNavigationBarItem(icon: Icon(Icons.event), label: 'События'),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.event),
+          label: 'Задачи',
+        ), // Кнопка "Home"
+        BottomNavigationBarItem(icon: Icon(Icons.topic), label: 'Проекты'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Сотрудники'),
+        BottomNavigationBarItem(icon: Icon(Icons.groups), label: 'Отделы'),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.analytics),
+          label: 'Производительность',
+        ),
       ],
       onTap: (index) {
         setState(() {
@@ -75,16 +78,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
             context.go('/'); // Переход на главную страницу
             break;
           case 1:
-            context.goNamed('CalendarPage');
+            context.goNamed('projects');
             break;
           case 2:
-            context.goNamed('PatientsPage');
+            context.goNamed('employees');
             break;
           case 3:
-            context.goNamed('RecordsPage');
+            context.goNamed('departments');
             break;
           case 4:
-            context.goNamed('EventsPage');
+            context.goNamed('perfomance');
             break;
         }
       },

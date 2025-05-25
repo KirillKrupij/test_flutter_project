@@ -3,18 +3,16 @@ import 'package:go_router/go_router.dart';
 
 import 'side_menu_item.dart';
 import 'side_menu_section.dart';
-import '../../../domain/entities/menu_section_entity.dart';
-import '../../../domain/entities/menu_item_entity.dart';
+
+import '../../../../domain/entities/menu_section_entity.dart';
+import '../../../../domain/entities/menu_item_entity.dart';
 
 class MenuDrawer extends StatelessWidget {
   final List<dynamic> menuItems;
   final Function(dynamic item)? onItemTap;
 
-  const MenuDrawer({
-    Key? key,
-    required this.menuItems,
-    this.onItemTap,
-  }) : super(key: key);
+  const MenuDrawer({Key? key, required this.menuItems, this.onItemTap})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {

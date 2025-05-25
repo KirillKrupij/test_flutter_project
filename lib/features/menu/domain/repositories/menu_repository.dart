@@ -1,7 +1,7 @@
 //репозиторий для преобразования простых моделей в сущности, которые используются в для отрисовки меню
 import 'package:flutter/material.dart';
-import '../entities/menu_item_entity.dart';
-import '../entities/menu_section_entity.dart';
+import '../../../../domain/entities/menu_item_entity.dart';
+import '../../../../domain/entities/menu_section_entity.dart';
 import '../../data/repositories/menu_repository.dart';
 import '../../data/models/menu_item_model.dart';
 import '../../data/models/menu_section_model.dart';
@@ -17,21 +17,24 @@ class MenuDomainRepository {
       final menuModels = await menuRepository.getMenuData();
 
       // Преобразуем модели в сущности
-      final menuEntities = menuModels.map((model) {
-        if (model is MenuSectionModel) {
-          // Если модель - раздел меню
-          return MenuSectionEntity(section: model.section);
-        } else if (model is MenuItemModel) {
-          // Если модель - пункт меню
-          return MenuItemEntity(
-            icon: getIconFromName(model.icon), // Преобразуем строку в IconData
-            text: model.text,
-            page: model.page,
-          );
-        } else {
-          throw Exception('Неизвестный тип модели: $model');
-        }
-      }).toList();
+      final menuEntities =
+          menuModels.map((model) {
+            if (model is MenuSectionModel) {
+              // Если модель - раздел меню
+              return MenuSectionEntity(section: model.section);
+            } else if (model is MenuItemModel) {
+              // Если модель - пункт меню
+              return MenuItemEntity(
+                icon: getIconFromName(
+                  model.icon,
+                ), // Преобразуем строку в IconData
+                text: model.text,
+                page: model.page,
+              );
+            } else {
+              throw Exception('Неизвестный тип модели: $model');
+            }
+          }).toList();
 
       return menuEntities;
     } catch (e) {
